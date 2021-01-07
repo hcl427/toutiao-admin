@@ -13,7 +13,10 @@ export const login = data => {
 
 // 获取用户信息
 export const getUserInfo = () => {
-
+  return request({
+    method: 'PATCH',
+    url: '/mp/v1_0/user/profile'
+  })
 }
 
 //  修改用户信息

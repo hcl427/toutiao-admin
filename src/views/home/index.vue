@@ -1,20 +1,16 @@
 <template>
-    <div class="home-container">
-      <sidebar></sidebar>
-      <container></container>
-    </div>
+  <div class="home-container">
+    暂未开发
+  </div>
 </template>
 <script>
-import sidebar from '@/components/sidebar/index.vue'
-import container from '@/components/container/index.vue'
 export default {
-  name: 'home',
   data () {
     return {}
   },
-  components: {
-    sidebar,
-    container
+  methods: {
+
   }
 }
 </script>
+<style lang="less" scoped></style>

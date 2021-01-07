@@ -1,8 +1,53 @@
 import Vue from 'vue'
-import { Button, Form, FormItem, Input, Checkbox, Message } from 'element-ui'
+import {
+  Button,
+  Form,
+  FormItem,
+  Input,
+  Checkbox,
+  Message,
+  Menu,
+  Submenu,
+  MenuItemGroup,
+  MenuItem,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  Card,
+  Breadcrumb,
+  BreadcrumbItem,
+  Select,
+  Radio,
+  RadioGroup,
+  TimePicker,
+  Col,
+  DatePicker,
+  Option,
+  Table,
+  TableColumn
+} from 'element-ui'
 Vue.use(Button)
 Vue.use(Form)
 Vue.use(FormItem)
 Vue.use(Input)
 Vue.use(Checkbox)
+Vue.use(Menu)
+Vue.use(Submenu)
+Vue.use(MenuItemGroup)
+Vue.use(MenuItem)
+Vue.use(Dropdown)
+Vue.use(DropdownItem)
+Vue.use(DropdownMenu)
+Vue.use(Card)
+Vue.use(Breadcrumb)
+Vue.use(BreadcrumbItem)
+Vue.use(Select)
+Vue.use(Radio)
+Vue.use(RadioGroup)
+Vue.use(TimePicker)
+Vue.use(Col)
+Vue.use(DatePicker)
+Vue.use(Option)
+Vue.use(Table)
+Vue.use(TableColumn)
 Vue.prototype.$message = Message

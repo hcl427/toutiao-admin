@@ -29,9 +29,9 @@ export default {
     }
     return {
       user: {
-        mobile: '', // 手机号
-        code: '', // 验证码
-        agree: false // 是否同意协议
+        mobile: '13944444444', // 手机号
+        code: '246810', // 验证码
+        agree: true // 是否同意协议
       },
       formRules: { // 表单验证规则
         mobile: [
@@ -56,8 +56,9 @@ export default {
       login(this.user).then(res => {
         this.$message.success('登录成功')
         this.loading = false
+        window.localStorage.setItem('user', JSON.stringify(res.data.data))
         if (res.status === 201) {
-          this.$router.push({ name: 'home' })
+          this.$router.push({ path: '/home' })
         }
         console.log(res)
       // eslint-disable-next-line handle-callback-err

@@ -1,5 +1,7 @@
 <template>
-  <div class="top-container">顶部</div>
+  <div class="fans-container">
+    fans
+  </div>
 </template>
 <script>
 export default {
@@ -8,3 +10,6 @@ export default {
   }
 }
 </script>
+<style lang="less" scoped>
+
+</style>
