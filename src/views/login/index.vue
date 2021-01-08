@@ -1,6 +1,6 @@
 <template>
   <div class="login-container">
-    <el-form class="form" ref="form" :rules="formRules" :model="user" label-width="80px">
+    <el-form class="form" ref="user" :rules="formRules" :model="user" label-width="80px">
       <el-form-item label="手机号" prop="mobile">
         <el-input v-model="user.mobile" placeholder="请输入手机号"></el-input>
       </el-form-item>
@@ -12,7 +12,7 @@
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="submitForm" :loading="loading">登录</el-button>
-        <el-button>重置</el-button>
+        <el-button @click="resetForm">重置</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -29,7 +29,7 @@ export default {
     }
     return {
       user: {
-        mobile: '13944444444', // 手机号
+        mobile: '13911111111', // 手机号
         code: '246810', // 验证码
         agree: true // 是否同意协议
       },
@@ -56,23 +56,27 @@ export default {
       login(this.user).then(res => {
         this.$message.success('登录成功')
         this.loading = false
-        window.localStorage.setItem('user', JSON.stringify(res.data.data))
         if (res.status === 201) {
           this.$router.push({ path: '/home' })
         }
+        window.localStorage.setItem('user', JSON.stringify(res.data.data))
         console.log(res)
       // eslint-disable-next-line handle-callback-err
       }).catch(error => {
         this.$message.error('登录失败')
         this.loading = false
       })
+    },
+    // 重置功能
+    resetForm () {
+      this.$refs.user.resetFields()
     }
   }
 }
 </script>
 <style lang="less" scoped>
   .login-container{
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;

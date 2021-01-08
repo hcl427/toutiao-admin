@@ -24,7 +24,9 @@ import {
   DatePicker,
   Option,
   Table,
-  TableColumn
+  TableColumn,
+  Pagination,
+  Tag
 } from 'element-ui'
 Vue.use(Button)
 Vue.use(Form)
@@ -50,4 +52,6 @@ Vue.use(DatePicker)
 Vue.use(Option)
 Vue.use(Table)
 Vue.use(TableColumn)
+Vue.use(Pagination)
+Vue.use(Tag)
 Vue.prototype.$message = Message

@@ -11,7 +11,6 @@ const routes = [{
 {
   path: '/',
   name: 'loyout',
-  redirect: '/home',
   component: () => import('@/components/layout/index.vue'),
   children: [
     {
@@ -56,17 +55,12 @@ const router = new VueRouter({
 // next 放行
 router.beforeEach((to, from, next) => {
   const user = JSON.parse(window.localStorage.getItem('user'))
-  if (to.name !== 'login') {
-    // 如果登录了 就放行
-    if (user) {
-      next()
-    } else {
-      // 否则跳转到登录页面
-      next({ path: '/login' })
-    }
+  if (to.path !== '/login') {
+    if (!user) {
+      next('/login')
+    } else next()
   } else {
     next()
   }
-  next()
 })
 export default router
