@@ -5,6 +5,7 @@
     <Card></Card>
     <!-- 数据列列表 -->
     <Tabel></Tabel>
+
   </div>
 </template>
 <script>
